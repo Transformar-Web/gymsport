@@ -1,0 +1,200 @@
+@import '_variables.scss';
+@import 'mixins.scss';
+
+.modalPrincipal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.9);
+    visibility: hidden;
+    opacity: 0;
+    
+    @include flexDirection(column);
+    justify-content: center;
+    align-items: center;
+
+    &__close{
+       width: 30px;
+       height: 30px;
+       float: left;
+       margin: 10px;
+       cursor: pointer;
+    }
+
+    &__close:hover{
+        transform: scale(1.1);
+    }
+
+    &__content{
+        width: 95%;
+        height: auto;
+        background: $colorRed;
+        overflow-y: scroll;
+        text-align: justify;
+
+        @include MediaQuerie(tablet){
+           width: 70%;
+        }
+
+        @include MediaQuerie(desktop){
+            width: 50%;
+            overflow-y: visible;
+         }
+    }
+
+    &__article{
+        // color: white;
+        background-color: white;
+        clear: both;
+        padding: 10px;
+        font-size: 1.1rem;
+    }
+}
+
+.modalPrincipal--active{
+    visibility: visible;
+    opacity: 1;
+    transition: 1s ease-in;
+}
+
+// -----------------------------------------
+.modalContact{
+   width: 100%;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: rgba(0,0,0,0.9);
+   z-index: 20;
+   visibility: hidden;
+   opacity: 0;
+   transition: opacity .8s ease;
+
+  //centrar
+  @include centrarFlex();    
+}
+
+.containerModal{
+    width: 90%;
+    height: 500px;
+    background-color: white;
+    border-radius: 5px;
+
+    @include MediaQuerie(tablet){
+        width: 70%;
+        height: 600px;
+    }
+    @include MediaQuerie(desktop){
+        width: 40%;
+        height: 600px;
+    }
+
+    &__contentClose{
+        width: 100%;
+        height: 45px;
+        position: relative;
+        background-color: $colorRed;
+        border-radius: 5px 5px 0 0;
+
+        @include MediaQuerie(tablet){
+            height: 50px;
+        }
+       
+    }
+
+    &__cancel{
+        width: 7%;
+        padding: 10px 0;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        cursor: pointer;
+
+        @include MediaQuerie(tablet){
+            width: 5%;
+        }
+        @include MediaQuerie(tablet){
+            width: 4%;
+        }
+    }
+
+    &__h2{
+        text-align: center;
+        font-size: 2rem;
+        padding: 10px 0;
+        color: #333333;
+    }
+}
+
+.modalContact-active{
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.form{
+    width: 90%;
+    height: auto;
+    margin: auto;
+
+    &__label{
+        font-size: 1.2rem;
+    }
+
+    &__inputs{
+        width: 100%;
+        height: 30px;
+        margin-top: 5px;
+        border-radius: 3px;
+        border: 2px solid rgba(128, 128, 128, 0.349);
+        box-sizing: 1px 2px 3px gray;
+        background: none;
+    }
+
+    &__textarea{
+        width: 100%;
+        height: 80px;
+        margin-top: 5px;
+        border-radius: 3px;
+        border: 2px solid rgba(128, 128, 128, 0.349);
+        box-sizing: 1px 2px 3px gray;
+        background: none;
+
+        @include MediaQuerie(tablet){
+            height: 120px;
+        }
+    }
+
+    &__containerBtn{
+        width: 100%;
+        height: 150px;
+        margin-top: 35px;
+
+        @include MediaQuerie(tablet){
+            width: 80%;
+            margin: 35px auto;
+        }
+    }
+
+    &__btnSubmit{
+       width: 100%;
+       height: 40px;
+       background-color: $colorRed;
+       color: white;
+       border: none;
+       font-size: 1.3rem;
+       font-weight: bold;
+       border-radius: 3px;
+       cursor: pointer;
+
+       @include MediaQuerie(tablet){
+        height: 45px;
+       }
+    }
+}
+
+
+

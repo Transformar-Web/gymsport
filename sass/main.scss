@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import 'header.scss';
+@import 'section1.scss';
+@import 'section2.scss';
+@import 'section3.scss';
+@import 'section4.scss';
+@import 'footer.scss';
+@import 'modal.scss';
+@import 'fixed.scss';
+
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #131212;
+}
+
+p, a , article,label {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #333333;
+}
+
+h1,h2,h3{ 
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+h2{
+    color: white;
+}
+
+.pText{
+    font-size: 1.1rem;
+}
+
+.hideScroll{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.showScroll{
+    opacity: 1;
+    visibility: visible;
+}

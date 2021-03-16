@@ -1,0 +1,281 @@
+@import '_variables.scss';
+@import 'mixins.scss';
+
+// codigo del header
+// parte de este codigo sigue la metodología mobile first
+// los include llaman a los media queries de los respectivos dispositivos
+header{
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    z-index: 0;
+
+    @include MediaQuerie(tablet){
+        height: 65vh;
+    }
+    @include MediaQuerie(desktop){
+        height: 95vh;
+    }
+}
+header::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;          
+    background: linear-gradient(0deg,rgba(0, 0, 0, 0.1),rgba(235, 5, 5, 0.493));
+    z-index: 1;
+
+    @include MediaQuerie(tablet){
+        height: 65vh;
+    }
+    @include MediaQuerie(desktop){
+        height: 95vh;
+    }
+}
+
+// codigo del slide
+// este contenedor es donde se estructura el slider automatico 
+// la estructura esta dinamicamente controlada con codigo javascript
+.containerSlide{
+   width: 100%;
+   height: auto; // hereda el alto del header
+
+   &__itemSlide{
+    width: 100%;
+    height: auto; // hereda el alto del containerSlide
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity .7s ease-in-out;
+   }
+
+   &__itemSlide:nth-child(1){
+    background-image: url("../img/gym1.jpg") ;
+   }
+   &__itemSlide:nth-child(2){
+    background-image: url("../img/gym3.jpg") ;
+   }
+   &__itemSlide:nth-child(3){
+    background-image: url("../img/gym2.jpg") ;
+   }
+}
+// esta clase se agrega para que el slider automatico funcione 
+.active-slide{
+    opacity: 1;
+}
+
+// -----------------------------------------
+
+//Codigo Menu 
+// Tenemos la estructura del navbar contenedor, dentro de él hay 3 subcontenedores 
+// section logo , section iconMenu y section Links 
+// hay una alineacion display flex y un flex-wrap que se encarga que encaje las secciones
+// Cuando estamos en la media querie desktop section iconMenu desaparece.
+.navbar{
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 5;
+    @include flexDirection(row);
+    flex-wrap: wrap;
+
+    &__sectionLogo{
+      width: 50%;
+      height: 70px;
+       
+       // --------------------
+        @include MediaQuerie(desktop){
+            width: 25%;
+            height: 70px;
+            // background: linear-gradient(0deg,rgba(235, 5, 5, 0.493),rgba(202, 2, 2, 0.493));
+        }
+        // ---------------------
+    }
+    &__logo{
+        width: 100%;
+        height: 70px;
+    }
+
+    &__sectionIconMenu{
+      width: 50%;
+      height: 70px;
+      @include flexDirection(row);
+      justify-content: flex-end;
+
+      @include MediaQuerie(desktop){
+          display: none;
+      }
+    }
+    &__sectionLinks{
+        width: 100%;
+        height: auto;
+        visibility: hidden;
+        opacity: 0;
+        // ----------------------------
+        @include MediaQuerie(desktop){
+            width: 75%;
+            visibility: visible;
+            opacity: 1;
+            // background-color: $colorRed;
+            // background: linear-gradient(0deg,rgba(235, 5, 5, 0.493),rgba(202, 2, 2, 0.493));
+        }
+        // ----------------------------
+    }
+    &__enlaces{
+        width: 90%;
+        height: auto;
+        margin: auto;
+        background-color: $colorWhite;
+        @include flexDirection(column);
+        border-left: 15px solid $colorRed;
+        border-radius: 1px;
+        
+        // --------------------
+        @include MediaQuerie(desktop){
+            width: 100%;
+            height: 70px;
+            align-items: center;
+            border-left: none;
+            background-color: transparent;
+
+            @include flexDirection(row);
+            justify-content: center;
+        }
+        // -----------------------
+    }
+    &__a{
+      padding: 13px;
+      text-decoration: none;
+      
+      //---------------------------
+       @include MediaQuerie(desktop){
+          font-size: 1.3rem;
+          font-weight: bold;
+          color: white;
+          margin: 5px;
+       }
+      //------------------------------ 
+      
+    }
+    &__a:hover{
+        background-color: $colorRed;
+        color: $colorWhite;
+        // ------------------------
+        @include MediaQuerie(desktop){
+         background-color: transparent;
+         text-decoration: 2px underline;
+        }
+        // -------------------------
+      }
+}
+
+.collapsar{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .7s ease-in-out;
+}
+
+// ----------------------------------------------
+
+// Este contener esta centrado absolutamente en el viewport del header
+// Tiene 2 subcontenedores headerText y headerBtns 
+.containerContentHeader{
+    width: 100%;
+    height: auto;
+    @include CentrarAbsolute();
+    z-index: 4;
+}
+
+.headerText{
+    width: 100%;
+    height: auto;
+    
+
+    &__textoh1{
+        text-align: center;
+        font-size: 2rem;
+        // color: rgba(255, 255, 255, 0.507);
+        color: rgba(255, 255, 255, 0.658);
+        text-transform: uppercase;
+        
+        // --------------------------
+        @include MediaQuerie(tablet){
+            font-size: 3.4rem;
+        }
+        @include MediaQuerie(desktop){
+            font-size: 3.7rem;
+        }
+        // --------------------------
+    }
+
+     &__textoP{
+         width: 90%;
+         height: auto;
+         margin: auto;
+         color: white;
+         text-align: center;
+         font-size: 1.1rem;
+   
+        // --------------------------
+        @include MediaQuerie(tablet){
+            font-size: 1.4rem;
+        }
+        @include MediaQuerie(desktop){
+            font-size: 1.6rem;
+        }
+        // --------------------------
+     }
+}
+// --------------------------------------
+
+.headerBtns{
+    width: 60%;
+    height: auto;
+    text-transform: uppercase;
+    margin: 25px auto;
+    @include flexDirection(column);
+
+    // ---------------------------
+    @include MediaQuerie(tablet){
+        @include flexDirection(row);
+        justify-content: center;
+    }
+    // ---------------------------
+
+    &__btnEnlace1{
+        @include Btn();
+        border: 3px solid $colorRed;
+        margin: 8px;
+        color: white;
+        background-color: $colorRed ;
+       
+        // ------------------------
+        @include MediaQuerie(tablet){
+            padding: 12px 25px;
+        }
+        // -------------------------
+    }
+    &__btnEnlace2{
+        @include Btn();
+        border: 3px solid $colorRed;
+        margin: 8px;
+        color: white;
+    
+        //------------------------    
+        @include MediaQuerie(tablet){
+            padding: 12px 25px;
+        }
+        // ------------------------
+    }
+}
+
+
+    
+
+
+

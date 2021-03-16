@@ -1,0 +1,199 @@
+@import '_variables.scss';
+@import 'mixins.scss';
+
+
+.section4{
+    width: 100%;
+    height: auto;
+    // background-color: #333333;
+
+    .section-h2{
+        text-align: center;
+        font-size: 2rem;
+        padding: 20px 0;
+
+        @include MediaQuerie(tablet){
+          font-size: 2.6rem;
+        }
+    }
+}
+
+.containerCard{
+   width: 90%;
+   height: auto;
+   margin: auto;
+   padding: 5px;
+
+   @include MediaQuerie(tablet){
+       @include flexDirection(row);
+       flex-wrap: wrap;
+       justify-content: space-around;
+   }
+   @include MediaQuerie(desktop){
+    width: 85%;
+    @include flexDirection(row);
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+
+   &__card{
+       width: 100%;
+       height: auto;
+       background-color: white;
+       border-top: 12px solid $colorRed;
+       padding-bottom: 15px;
+       margin-top: 15px;
+       box-shadow: 1px 1px 10px gray;
+
+       @include MediaQuerie(tablet){
+         width: 48%;
+         height: 415px;
+       }
+       @include MediaQuerie(desktop){
+        width: 30%;
+        height: 415px;
+      }
+   }
+   &__card:nth-child(2){
+       border-top: 20px solid $colorRed; 
+       height: auto;
+       
+       @include MediaQuerie(tablet){
+           order: 3;
+       }
+       @include MediaQuerie(desktop){
+        order: 0;
+       }
+    }
+
+   &__h3{
+       color: #333333;
+       text-align: center;
+       font-size: 2rem;
+    //    padding: 3px 0;
+   }
+   &__price{
+        text-align: center;
+        color: #000000;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+    &__option{
+        margin-top: 10px;
+        font-size: 18px;
+
+        .fa-check{
+            color: $colorRed;
+            padding: 0 10px;
+        }
+        .fa-times{
+            color: $colorGray;
+            padding: 0 10px;
+        }
+    }
+}
+
+.about{
+    width: 100%;
+    height: auto;
+    // background-color: gray;
+    margin: 30px 0;
+    padding: 50px 0;
+
+    
+
+    &__container{
+        width: 100%;
+        height: auto;
+        padding: 30px 0;
+        // background-color: #333333;
+        @include flexDirection(column);
+
+        @include MediaQuerie(tablet){
+            @include flexDirection(row);  
+        }
+        @include MediaQuerie(desktop){
+           width: 80%;
+           margin: auto; 
+        }
+    }
+
+    &__contentImg{
+        width: 100%;
+
+        @include MediaQuerie(tablet){
+            width: 40%;
+        }
+        @include MediaQuerie(desktop){
+            width: 30%;
+        }
+    }
+
+    &__imagen{
+        width: 360px;
+        height: 450px;
+
+        @include MediaQuerie(tablet){
+            width: 330px;
+            height: 400px;
+        }
+
+        @include MediaQuerie(desktop){
+            width: 360px;
+            height: 450px;
+        }
+    }
+
+    &__article{
+        width: 100%;
+        height: auto;
+        color: white;
+        margin-top: 15px;
+        
+
+        @include MediaQuerie(tablet){
+            width: 60%;
+        }
+        @include MediaQuerie(desktop){
+            width: 70%;
+            margin-top: 30px;
+        }
+    }
+
+    &__h2{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    &__p{
+        color: white;
+        width: 90%;
+        height: auto;
+        margin: 10px auto;
+        font-size: 17px;
+        
+        @include MediaQuerie(desktop){
+            width: 75%;
+            padding-top: 25px;
+        }
+    }
+}
+
+
+.h3-ubicacion{
+    text-align: center;
+    color: white;
+    font-size: 1.7rem;
+    padding: 10px 0;
+}
+
+.p-ubicacion{
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+iframe{
+    padding-bottom: 35px;
+}

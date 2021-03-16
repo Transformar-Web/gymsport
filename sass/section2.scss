@@ -1,0 +1,202 @@
+@import '_variables.scss';
+@import 'mixins.scss';
+
+
+.section2{
+    width: 100%;
+    height: auto;
+    // background-color: #444444;
+    margin: 25px 0;
+
+    &__h2{
+        text-align: center;
+        color: $colorWhite;
+        font-size: 2.1rem;
+        // padding: 10px 0px;
+        // text-decoration: underline;
+        
+        @include MediaQuerie(tablet){
+            font-size: 2.8rem;
+        }
+        @include MediaQuerie(desktop){
+            font-size: 3rem;
+        }
+    }
+
+    .hrColor{
+        height: 2px;
+        width: 40%;
+        background-color: $colorRed;
+        margin-bottom: 30px;
+        border: none;
+    }
+}
+
+
+.containerExers {
+    width: 100%;
+    height: auto;
+    background-color: #333333;
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+    &__itemContent{
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        
+        @include MediaQuerie(tablet){
+            width: 50%;
+        }
+        @include MediaQuerie(desktop){
+            width: 25%;
+        }
+        
+
+        // dirección de los elementos
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    &__itemContent:nth-child(1){background-image: url("../img/crossfit.jpg");}
+    &__itemContent:nth-child(2){background-image: url("../img/cuerdas.jpg");}
+    &__itemContent:nth-child(3){background-image: url("../img/pesas.jpg");}
+    &__itemContent:nth-child(4){background-image: url("../img/piernas.jpg");}
+    &__itemContent:nth-child(5){background-image: url("../img/abdomen.jpeg");}
+    &__itemContent:nth-child(6){background-image: url("../img/maquina.jpg");}
+    &__itemContent:nth-child(7){background-image: url("../img/bicycleGym.jpg");}
+    &__itemContent:nth-child(8){background-image: url("../img/bola.jpg");}
+    
+
+    &__itemContent::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.5);
+        width: 100%;
+        height: 300px;
+        z-index: 2;
+    }
+
+    &__itemContent:hover::after{
+        background: rgba(0,0,0,0.1);
+        // clip-path: circle(75% at left);
+        // transition: 1s ease;
+        // transform: scale(1.1);
+    }
+
+
+    &__content{
+        width: 75%;
+        height: auto;
+        color: $colorWhite;
+        position: relative;
+        z-index: 3;
+        // background-color: #333333;
+        padding: 20px;
+    }
+    
+    &__h2{
+        // color: rgba(255, 0, 0, 0.637);
+        font-weight: bold;
+        padding: 5px 0;
+        font-size: 1.5rem;
+    }
+    &__p{
+        color: $colorWhite;
+    }
+
+}
+
+// -------------------------------------------------------------
+
+.trainers{
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    padding: 50px 0;
+    
+    .trainersh2{
+        text-align: center;
+        font-size: 2rem;
+        padding: 20px 0;
+    }
+}
+
+.containerTrainers{
+   width: 90%;
+   height: auto;
+   margin: auto;
+//    background-color: #333333;
+//    padding: 15px;
+
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+
+
+   @include MediaQuerie(tablet){
+       justify-content: space-around;
+       flex-direction: row;
+   }
+
+
+   &__items{
+       width: 100%;
+       height: auto;
+       margin: 20px 0;
+
+       @include MediaQuerie(tablet){
+        width: 40%;
+       }
+       @include MediaQuerie(desktop){
+        width: 25%;
+       }
+   }
+   &__img{
+       width: 200px;
+       height: 200px;
+       border-radius: 50%;
+       display: block;
+       margin: auto;
+       object-fit: cover;
+   }
+   &__h3{
+       text-align: center;
+       color: white;
+       padding: 5px 0;
+   }
+   &__p{
+       width: 80%;
+       height: auto;
+       margin: 10px auto;
+       padding: 10px 5px;
+       color: white;
+    //    background-color: $colorRed;
+    border: 2px solid $colorRed;
+       text-align: center;
+       border-radius: 5px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+.fixedContainer {
+  width: 80px;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+@media screen and (min-width: 650px) {
+  .fixedContainer {
+    bottom: 0;
+  }
+}
+@media screen and (min-width: 950px) {
+  .fixedContainer {
+    right: 10px;
+    bottom: 50px;
+  }
+}
+.fixedContainer__contentWhatsApp {
+  width: 60px;
+  height: 60px;
+  margin: 12px auto;
+  border-radius: 50%;
+  background-color: #0eb80e;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 650px) {
+  .fixedContainer__contentWhatsApp {
+    width: 65px;
+    height: 65px;
+  }
+}
+.fixedContainer__icons {
+  width: 65%;
+}
+
+.tippy-box[data-theme~=green] {
+  background-color: #0eb80e;
+  color: white;
+  padding: 5px;
+  font-size: 1.1rem;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+/*# sourceMappingURL=fixed.css.map */

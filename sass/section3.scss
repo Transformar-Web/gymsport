@@ -1,0 +1,101 @@
+@import '_variables.scss';
+@import 'mixins.scss';
+
+
+.section3{
+    width: 100%;
+    height: auto;
+    @include backgroundImage("../img/textura1.jpg");
+    background-attachment: fixed;
+    margin: 20px 0;
+}
+
+.containerPrincipal{
+    width: 100%;
+    height: auto;
+    @include flexDirection(column);
+    
+    @include MediaQuerie(tablet){
+        @include flexDirection(row);
+    }
+    @include MediaQuerie(desktop){
+        width: 80%;
+        margin: auto;
+    }
+}
+
+
+// 1 subcontendor de containerPrincipal
+.containerDescuento{
+    width: 100%;
+    height: auto;
+
+    @include MediaQuerie(tablet){
+        width: 50%;
+    }
+    @include MediaQuerie(tablet){
+        width: 50%;
+    }
+
+    &__h2{
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 15px 0;
+        
+        @include MediaQuerie(tablet){
+           font-size: 1.8rem;
+        }
+        @include MediaQuerie(desktop){
+            font-size: 2.5rem;
+         }
+    }
+
+    &__p{
+        color: $colorWhite;
+        padding: 10px 15px;
+        font-size: 18px;
+        text-align: center;
+    }
+    &__btn{
+        @include Btn();
+        background-color: transparent;
+        border: 2px solid $colorRed;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 200px;
+        height: 50px;
+        background: linear-gradient(5deg,rgb(255, 0, 0),rgba(255, 0, 0, 0.486));
+        margin: 10px auto;
+        box-shadow: 1px 1px 8px $colorRed , -1px -1px 8px $colorRed;
+    }
+
+}
+// 2 subcontendor de containerPrincipal
+.containerPerson{
+    width: 100%;
+    height: auto;
+
+    @include MediaQuerie(tablet){
+        width: 50%;
+    }
+
+    &__img{
+        width: 320px;
+        height: 400px;
+        object-fit: cover;
+        margin: auto;
+        display: block;
+
+        @include MediaQuerie(tablet){
+            width: 400px;
+        }
+        @include MediaQuerie(desktop){
+            width: 400px;
+            width: 400px;
+        }
+    }
+}
+
+
+
